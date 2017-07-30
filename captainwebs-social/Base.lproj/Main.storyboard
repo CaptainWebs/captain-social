@@ -83,13 +83,12 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hWX-5b-V2f">
                                 <rect key="frame" x="16" y="340" width="343" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="AhQ-hv-sh9"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Biq-zd-ENH"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -105,6 +104,9 @@
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5rQ-zq-H8u"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -132,6 +134,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tET-an-iq2" secondAttribute="bottom" id="ytg-z7-kTC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="MIb-ba-fsk" id="Pdm-TS-Jo5"/>
+                        <outlet property="passwordField" destination="hWX-5b-V2f" id="6gB-2I-hQ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

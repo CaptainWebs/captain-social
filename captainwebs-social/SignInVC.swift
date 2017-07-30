@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
 
@@ -22,14 +23,20 @@ class SignInVC: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+  
+  
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
+  override func viewDidAppear(_ animated: Bool) {
 
+
+   if let _ = KeychainWrapper.standard.string(forKey: "uid"){
+    
+      performSegue(withIdentifier: "goToFeed", sender: nil)
+    
+    }
+
+   }
 
   @IBAction func fbButtonTapped(_ sender: Any) {
   
@@ -40,6 +47,7 @@ class SignInVC: UIViewController {
       if error != nil{
       
         print("Nurlan: An error happened - \(String(describing: error))")
+        
       
       } else if result?.isCancelled == true{
       
@@ -70,6 +78,13 @@ class SignInVC: UIViewController {
       } else {
       
         print("Successfully authenticated with Firebase")
+        
+        if user != nil{
+        
+          KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
+          self.performSegue(withIdentifier: "goToFeed", sender: nil)
+        
+        }
       
       }
   
@@ -92,6 +107,13 @@ class SignInVC: UIViewController {
             if error == nil{
             
               print("Nurlan: Email user authenticated with Firebase")
+              if user != nil{
+        
+                KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
+                self.performSegue(withIdentifier: "goToFeed", sender: nil)
+        
+              }
+              
             
             } else{
             
@@ -104,6 +126,12 @@ class SignInVC: UIViewController {
                 } else{
                 
                   print("Nurlan: Successfully created a user on Firebase using email")
+                  if user != nil{
+        
+                    KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
+                    self.performSegue(withIdentifier: "goToFeed", sender: nil)
+        
+                  }
                 
                 }
               

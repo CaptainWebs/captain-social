@@ -13,6 +13,7 @@
 		244711101F2D252700B3C234 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2447110F1F2D252700B3C234 /* Assets.xcassets */; };
 		244711131F2D252700B3C234 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 244711111F2D252700B3C234 /* LaunchScreen.storyboard */; };
 		2447111B1F2D257E00B3C234 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2447111A1F2D257E00B3C234 /* GoogleService-Info.plist */; };
+		24EBAA871F2E69B800CA48FC /* FeedVCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24EBAA861F2E69B800CA48FC /* FeedVCV.swift */; };
 		7A4AF90FA9FCA948E11E7267 /* Pods_captainwebs_social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48ACE89D41D4CB583CE5C73E /* Pods_captainwebs_social.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		244711121F2D252700B3C234 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		244711141F2D252700B3C234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2447111A1F2D257E00B3C234 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		24EBAA861F2E69B800CA48FC /* FeedVCV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVCV.swift; sourceTree = "<group>"; };
 		48ACE89D41D4CB583CE5C73E /* Pods_captainwebs_social.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_captainwebs_social.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A76AF4EDFCF52F6B1E2C7AB0 /* Pods-captainwebs-social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-captainwebs-social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-captainwebs-social/Pods-captainwebs-social.debug.xcconfig"; sourceTree = "<group>"; };
 		F2C2BC7D180496BD472E4E42 /* Pods-captainwebs-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-captainwebs-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-captainwebs-social/Pods-captainwebs-social.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				244711111F2D252700B3C234 /* LaunchScreen.storyboard */,
 				244711141F2D252700B3C234 /* Info.plist */,
 				2447111A1F2D257E00B3C234 /* GoogleService-Info.plist */,
+				24EBAA861F2E69B800CA48FC /* FeedVCV.swift */,
 			);
 			path = "captainwebs-social";
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			files = (
 				2447110B1F2D252700B3C234 /* SignInVC.swift in Sources */,
 				244711091F2D252700B3C234 /* AppDelegate.swift in Sources */,
+				24EBAA871F2E69B800CA48FC /* FeedVCV.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

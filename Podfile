@@ -12,5 +12,7 @@ target 'captainwebs-social' do
   pod 'Firebase/Storage'
   pod 'Firebase/Core'
   pod 'FBSDKLoginKit'
+  pod 'SwiftKeychainWrapper'
+
 
 end

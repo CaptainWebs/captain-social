@@ -38,8 +38,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tET-an-iq2">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you do not have an account on us, it will be automatically created for you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MF-as-Opg">
-                                        <rect key="frame" x="0.0" y="3" width="375" height="52"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you don't have an account, it will be created for you." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3MF-as-Opg">
+                                        <rect key="frame" x="0.0" y="5" width="375" height="52"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="52" id="uA4-Sg-GEj"/>
                                         </constraints>
@@ -51,9 +51,9 @@
                                 <color key="backgroundColor" red="0.18823529411764706" green="0.24705882352941178" blue="0.62352941176470589" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="3MF-as-Opg" firstAttribute="leading" secondItem="tET-an-iq2" secondAttribute="leading" id="31N-vq-mk9"/>
-                                    <constraint firstItem="3MF-as-Opg" firstAttribute="top" secondItem="tET-an-iq2" secondAttribute="top" constant="3" id="9VA-pe-ZAH"/>
                                     <constraint firstAttribute="trailing" secondItem="3MF-as-Opg" secondAttribute="trailing" id="C6A-xo-5fR"/>
                                     <constraint firstAttribute="height" constant="50" id="ivI-n9-yQh"/>
+                                    <constraint firstItem="3MF-as-Opg" firstAttribute="top" secondItem="tET-an-iq2" secondAttribute="top" constant="5" id="r8J-TI-1wT"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in using" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qa-dp-pwM">
@@ -71,9 +71,13 @@
                                     <constraint firstAttribute="height" constant="50" id="QBu-Mz-CPD"/>
                                 </constraints>
                                 <state key="normal" image="login-facebook"/>
+                                <connections>
+                                    <action selector="fbButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y21-s5-D1V"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIb-ba-fsk">
                                 <rect key="frame" x="16" y="270" width="343" height="50"/>
+                                <color key="tintColor" red="0.18823529410000001" green="0.2470588235" blue="0.62352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1JZ-Uh-6Vy"/>
                                 </constraints>
@@ -93,7 +97,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMc-z8-cKP">
                                 <rect key="frame" x="16" y="470" width="343" height="40"/>
-                                <color key="backgroundColor" red="0.31225135922431946" green="0.40639027953147888" blue="0.75928270816802979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.23756289482116699" green="0.35109210014343262" blue="0.59593218564987183" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="dZN-79-7Is"/>
                                 </constraints>

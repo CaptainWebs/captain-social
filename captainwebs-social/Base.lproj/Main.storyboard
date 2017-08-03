@@ -159,27 +159,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnR-Xi-w5G">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="fZU-d4-r4h">
-                                        <rect key="frame" x="14" y="25" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="B7B-aI-bD9"/>
-                                            <constraint firstAttribute="height" constant="30" id="E2X-0A-aCf"/>
-                                        </constraints>
-                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Social" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3z-2p-Ost">
                                         <rect key="frame" x="141" y="25" width="94" height="28"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eH8-1E-qcV">
+                                        <rect key="frame" x="15" y="25" width="38" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="sign-out"/>
+                                        <connections>
+                                            <action selector="signOutTapped:" destination="CLh-G2-3Hh" eventType="touchUpInside" id="XLj-TQ-SvC"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.2470588235" green="0.31764705879999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="6xI-JO-WMw"/>
                                     <constraint firstItem="S3z-2p-Ost" firstAttribute="centerX" secondItem="qnR-Xi-w5G" secondAttribute="centerX" id="9Zc-dY-Qc3"/>
                                     <constraint firstItem="S3z-2p-Ost" firstAttribute="top" secondItem="qnR-Xi-w5G" secondAttribute="top" constant="25" id="C37-JX-F5I"/>
-                                    <constraint firstItem="fZU-d4-r4h" firstAttribute="leading" secondItem="qnR-Xi-w5G" secondAttribute="leading" constant="14" id="UwM-ll-DHh"/>
-                                    <constraint firstItem="fZU-d4-r4h" firstAttribute="top" secondItem="qnR-Xi-w5G" secondAttribute="top" constant="25" id="vfp-0w-FLi"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1en-XN-EyH">
@@ -226,7 +225,7 @@
                                 <rect key="frame" x="0.0" y="165" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="340" id="VXJ-WL-paR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="feedCell" rowHeight="340" id="VXJ-WL-paR" customClass="PostCell" customModule="captainwebs_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="340"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXJ-WL-paR" id="Zwg-T0-9YX">
@@ -258,6 +257,7 @@
                                                         </imageView>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="IBH-Tp-B14">
                                                             <rect key="frame" x="273" y="10" width="60" height="60"/>
+                                                            <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="60" id="7TR-7U-azN"/>
                                                                 <constraint firstAttribute="height" constant="60" id="Wbe-Ck-bTB"/>
@@ -285,7 +285,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.25439026370000001" green="0.72892712839999996" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.2470588235" green="0.31764705879999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="eCG-hI-QXj" firstAttribute="leading" secondItem="aaD-if-Jh7" secondAttribute="leading" constant="10" id="9gV-Xx-cyo"/>
@@ -314,6 +314,13 @@
                                                 <constraint firstAttribute="bottom" secondItem="aaD-if-Jh7" secondAttribute="bottom" constant="8" id="cPD-bR-mZ5"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="eCG-hI-QXj" id="g2P-ia-oSf"/>
+                                            <outlet property="likesLbl" destination="5UL-ZG-Waf" id="TFV-pE-ahJ"/>
+                                            <outlet property="postImage" destination="3TB-Yh-lKF" id="PxA-o7-Ul3"/>
+                                            <outlet property="profileImg" destination="9TN-rt-jnj" id="WfA-dV-hAY"/>
+                                            <outlet property="usernameLbl" destination="bwt-mH-suP" id="xSn-sg-DZL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -333,6 +340,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="3qz-d6-Y83" id="yWG-UX-oBB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="jBa-Fc-oCM"/>
                     </connections>
                 </viewController>

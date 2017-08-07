@@ -81,6 +81,10 @@ class SignInVC: UIViewController {
         
         if user != nil{
         
+          let userData = ["provider" : credential.provider]
+        
+          
+          DataService.ds.createFirebaseDBUsers(uid: (user?.uid)! , userData: userData as! Dictionary<String, String>)
           KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
           self.performSegue(withIdentifier: "goToFeed", sender: nil)
         
@@ -108,6 +112,11 @@ class SignInVC: UIViewController {
             
               print("Nurlan: Email user authenticated with Firebase")
               if user != nil{
+              
+                 let userData = ["provider" : user?.providerID]
+        
+          
+                 DataService.ds.createFirebaseDBUsers(uid: (user?.uid)! , userData: userData as! Dictionary<String, String>)
         
                 KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
                 self.performSegue(withIdentifier: "goToFeed", sender: nil)
@@ -128,6 +137,10 @@ class SignInVC: UIViewController {
                   print("Nurlan: Successfully created a user on Firebase using email")
                   if user != nil{
         
+                     let userData = ["provider" : user?.providerID]
+        
+          
+                     DataService.ds.createFirebaseDBUsers(uid: (user?.uid)! , userData: userData as! Dictionary<String, String>)
                     KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
                     self.performSegue(withIdentifier: "goToFeed", sender: nil)
         

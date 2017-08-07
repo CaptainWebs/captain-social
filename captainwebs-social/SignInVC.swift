@@ -84,7 +84,7 @@ class SignInVC: UIViewController {
           let userData = ["provider" : credential.provider]
         
           
-          DataService.ds.createFirebaseDBUsers(uid: (user?.uid)! , userData: userData as! Dictionary<String, String>)
+          DataService.ds.createFirebaseDBUsers(uid: (user?.uid)! , userData: userData )
           KeychainWrapper.standard.set((user?.uid)!, forKey: "uid")
           self.performSegue(withIdentifier: "goToFeed", sender: nil)
         

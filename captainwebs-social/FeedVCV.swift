@@ -9,18 +9,30 @@
 import UIKit
 import Firebase
 import SwiftKeychainWrapper
+import Foundation
 
-class FeedVCV: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class FeedVCV: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView : UITableView!
+    var imagePicker: UIImagePickerController!
   
+  @IBOutlet weak var imageAdd: UIImageView!
     var posts = [Post]()
+  
+    static var imageCache: NSCache<NSString, UIImage> = NSCache()
 
     override func viewDidLoad() {
         super.viewDidLoad()
       
         tableView.delegate = self
         tableView.dataSource = self
+      
+        imagePicker = UIImagePickerController()
+      
+        imagePicker.allowsEditing = true
+      
+        imagePicker.delegate = self
       
         DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
           
@@ -59,16 +71,58 @@ class FeedVCV: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     }
   
+  
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+  
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage{
+        
+          imageAdd.image = image
+        
+        } else{
+        
+          print("Nurlan: A valid image was not found")
+        
+        }
+
+        imagePicker.dismiss(animated: true, completion: nil)
+  
+      }
+  
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
       let post = posts[indexPath.row]
-      print("Nurlan: \(post.caption)")
+      
+      if let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell") as? PostCell{
+      
+        
+        if let img = FeedVCV.imageCache.object(forKey: post.imageUrl as NSString){
+        
+          cell.configureCell(post: post, img: img)
+          return cell
+        
+        }else{
+         
+         cell.configureCell(post: post, img: nil)
+         return cell
+        
+        }
+        
+      
+      }else{
+      
+        return PostCell()
+      
+      }
 
-      return tableView.dequeueReusableCell(withIdentifier: "feedCell") as! PostCell
-   
-
+ 
     }
   
+  @IBAction func addImageTapped(_ sender: Any) {
+  
+
+    present(imagePicker, animated: true, completion: nil)
+  
+  }
 
   @IBAction func signOutTapped(_ sender: Any) {
   

@@ -184,11 +184,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1en-XN-EyH">
                                 <rect key="frame" x="16" y="80" width="343" height="70"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-Gm-jzc">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="Fge-Gm-jzc">
                                         <rect key="frame" x="10" y="10" width="59" height="50"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="59" id="jzG-2y-CkF"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="HvE-Ni-keU" appends="YES" id="Xgv-TK-QNX"/>
+                                        </connections>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="What is on your mind?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-0Z-Lbi">
                                         <rect key="frame" x="79" y="10" width="200" height="50"/>
@@ -340,11 +344,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageAdd" destination="Fge-Gm-jzc" id="sOq-bt-kSq"/>
                         <outlet property="tableView" destination="3qz-d6-Y83" id="yWG-UX-oBB"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="jBa-Fc-oCM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5zf-Pi-na0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HvE-Ni-keU">
+                    <connections>
+                        <action selector="addImageTapped:" destination="CLh-G2-3Hh" id="CDn-Gc-h0B"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="968.79999999999995" y="78.710644677661179"/>
         </scene>
